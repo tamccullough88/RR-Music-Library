@@ -1,6 +1,7 @@
+import React from 'react'
 import { useState } from 'react'
 
-function GalleryItem(props){
+function GalleryItem(props: any) {
     let [view, setView] = useState(false)
 
     const simpleView = () => {
@@ -9,7 +10,7 @@ function GalleryItem(props){
                 'width': '25vw',
                 'height': '20vh',
                 'border': '1px solid black',
-                'margin' : '2px',
+                'margin': '2px',
                 'position': 'relative'
             }}>
                 <h3>{props.item.trackName}</h3>
@@ -24,7 +25,7 @@ function GalleryItem(props){
                 'width': '80vw',
                 'height': '20vh',
                 'border': '1px solid black',
-                'margin' : '2px',
+                'margin': '2px',
                 'position': 'relative',
                 'backgroundImage': `url(${props.item.artworkUrl100})`,
                 'backgroundRepeat': 'no-repeat',
@@ -41,10 +42,10 @@ function GalleryItem(props){
 
     return (
         <div onClick={() => setView(!view)}
-        style={{'display': 'inline-block'}}>
+            style={{ 'display': 'inline-block' }}>
             {view ? detailView() : simpleView()}
         </div>
     )
-} 
+}
 
 export default GalleryItem
